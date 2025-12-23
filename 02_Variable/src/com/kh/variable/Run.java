@@ -10,7 +10,7 @@ public class Run {
 		//bc.autoCasting();		
 		//bc.forceCasting();
 		
-		C_scanner cs = new C_scanner();
+		C_Scanner cs = new C_Scanner();
 		cs.inputTest1();
 	}
 }
