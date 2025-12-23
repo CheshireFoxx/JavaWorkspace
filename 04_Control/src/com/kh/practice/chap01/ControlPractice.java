@@ -150,6 +150,34 @@ public class ControlPractice {
 		
 		System.out.println("로그인 성공");
 	}
+	
+	
+	public void method6() {
+		System.out.print("권한을 확인하고자 하는 회원 등급 : ");
+		String id = sc.next();
+		
+		String 관리 = "회원관리, 게시글 관리 ";
+		String 작성 = "게시글 작성, 댓글 작성 ";
+		String 조회 = "게시글 조회 ";
+		String 권한 =" ";
+		switch(id) {
+		case "관리자" : 
+			권한 = 관리+작성+조회;
+			break;
+		case "회원" : 
+			권한 = 작성+조회;
+			break;
+		case "비회원" :
+			id = 조회;
+			break;
+		}System.out.println(권한);
+	} 
+	
+	
+	
+	public void method7() {
+		
+	}
 }
 
 

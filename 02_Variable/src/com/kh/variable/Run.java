@@ -2,7 +2,7 @@ package com.kh.variable;
 
 public class Run {
 	public static void main(String[] args) {
-		A_variable av = new A_variable();
+		A_Variable av = new A_Variable();
 		//av.printVariable();
 		//av.initVariable();
 		
