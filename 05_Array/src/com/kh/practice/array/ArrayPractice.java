@@ -126,7 +126,7 @@ public class ArrayPractice {
 			
 			
 			System.out.println("문자 : ");
-			char ch = sc.
+			char ch = sc.next().charAt(0);
 			
 			char [] arr = str.toCharArray();//문자를 문자열로 변환하는 메서드
 			int count = 0;

@@ -13,11 +13,11 @@ public class UpAndDown {
 		
 		
 		while(true) {
-			System.out.print("1~100 »çÀÌÀÇ ÀÓÀÇÀÇ ³­¼ö¸¦ ¸ÂÃçº¸¼¼¿ä : ");
+			System.out.print("1~100 ì‚¬ì´ì˜ ì„ì˜ì˜ ë‚œìˆ˜ë¥¼ ë§ì¶°ë³´ì„¸ìš” : ");
 			int num = sc.nextInt();
 			
 			if(!(num>0&&num<=100)) {
-				System.out.println("1~100 »çÀÌÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println("1~100 ì‚¬ì´ì˜ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 				continue;
 			}
 			if(num>0&&num<=100&&num<random) {
@@ -33,14 +33,14 @@ public class UpAndDown {
 			}
 			
 			if(num>0&&num<=100&&num == random) {
-				System.out.println("Á¤´äÀÔ´Ï´Ù !!");
+				System.out.println("ì •ë‹µì…ë‹ˆë‹¤ !!");
 				count++;
 				break;
 			}
 			
 		}
 		
-		System.out.println(count+"È¸ ¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù.");
+		System.out.println(count+"íšŒ ë§Œì— ë§ì¶”ì…¨ìŠµë‹ˆë‹¤.");
 		
 	}
 }
