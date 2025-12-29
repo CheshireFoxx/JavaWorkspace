@@ -1,8 +1,10 @@
 package com.kh.practice.dimension;
 
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class DimensionPractice {
-	
+	Scanner sc = new Scanner(System.in);
 	
 	public void practice1() {
 		String [][] arr = new String [3][3];
@@ -42,28 +44,54 @@ public class DimensionPractice {
 		}
 	}
 	
-	public void practice4 () {
-		int [][] arr= new int [4][4];
-		
-		int sum = 0;
-		for(int i=0; i<arr.length; i++) {
-			for(int j=0; j<arr[i].length-1; j++) {
-				
-				int value = (int)(Math.random()*10+1);
-				sum += value;
-				System.out.print(value + " "+sum);
+	public void practice4() {
 
-		}System.out.println();
+	    int[][] arr = new int[4][4];
+
+	    // 값 저장 + 행합 + 열합 + 전체합 동시 처리
+	    for (int i = 0; i < arr.length - 1; i++) {
+	        for (int j = 0; j < arr[i].length - 1; j++) {
+
+	            arr[i][j] = (int)(Math.random() * 10) + 1;
+
+	            arr[i][arr[i].length - 1] += arr[i][j];      // 행 합
+	            arr[arr.length - 1][j] += arr[i][j];         // 열 합
+	            arr[arr.length - 1][arr[i].length - 1] += arr[i][j]; // 전체 합
+	        }
+	    }
+
+	    // 출력
+	    for (int i = 0; i < arr.length; i++) {
+	        for (int j = 0; j < arr[i].length; j++) {
+	            System.out.print(arr[i][j] + "\t");
+	        }
+	        System.out.println();
+	    }
 	}
-	}	
-	
+
+	public void practice5() {
+		System.out.print("행 크기 : ");
+		int num1 = sc.nextInt();
+		System.out.print("열 크기 : ");
+		int num2 = sc.nextInt();
+		
+		char [][] arr= new char [num1][num2];
+		
+		for (int i = 0; i < arr.length; i++) {
+	        for (int j = 0; j < arr[i].length; j++) {
+
+	    		char ch = (char)((int)(Math.random() * 26) + 65);
+	            arr[i][j] = ch;
+	            System.out.print(arr[i][j]+ " ");
+		
+	}System.out.println();
 	
 	
 	
 }
 
-
-
+	}
+}
 
 
 
