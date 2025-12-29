@@ -1,5 +1,7 @@
 package com.kh.practice.array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -121,36 +123,118 @@ public class ArrayPractice {
 	public void practice7() {
 			System.out.print("문자열 : ");
 			String str = sc.next();
-			char [] arr = str.toCharArray();
+			
 			
 			System.out.println("문자 : ");
-			String ss = sc.next();
+			char ch = sc.
 			
+			char [] arr = str.toCharArray();//문자를 문자열로 변환하는 메서드
 			int count = 0;
 			
+			System.out.print(str+"에"+ch+"가 존재하는 위치(인덱스) : " );
+			
 			for (int i=0; i<arr.length; i++) {
-				
-				if(arr[i] == ss) {
-					
+				if(arr[i] == ch) {
+					count++;
+					System.out.print(i+" ");
 				}
+				
 			}
-			System.out.println(str+"에"+ss+"가 존재하는 위치(인덱스) : "+ );
+			System.out.println();
+			System.out.print(ch+"의 개수 : "+ count);
 			
 	}
 
 	public void practice8() {
-
+			System.out.print("주민등록번호(-포함) : ");
+			String str = sc.next();
+			char [] origin = str.toCharArray(); //원본배열
+			char [] copy = Arrays.copyOf(origin, origin.length);
+			
+			
+			//8번 인덱스부터 *로 출력
+			
+			for (int i = 8; i<copy.length; i++) {
+				copy[i]='*';
+			}
+			for(int i = 0; i<copy.length; i++) {
+				System.out.println(copy[i]);
+			}
 	}
+	
 
 	public void practice9() {
+			int[] arr= new int [10];
+			for(int i =0; i<arr.length; i++) {
+				arr[i] = (int)(Math.random()*10+1);
+			}
+			for(int i=0; i<arr.length;i++) {
+				System.out.println(arr[i]+" ");
+			}
+			
+			//최대값, 최소값
+			int max=arr[0];
+			int min=arr[0];
+			
+			for(int i = 0; i<arr.length;i++) {
+				if(arr[i]>max) {
+					max=arr[i];
+				}
+				if(arr[i]<min) {
+					min=arr[i];
+				}
+			}
+			System.out.println("\n최대값 : "+max);
+			System.out.println("최소값 : "+min);
+	}
 
+	public void practice10() {
+			
+		int [] arr= new int [10];
+		for(int i =0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random()*10+1);
+			
+			for(int j = 0; j<arr.length; j++) {
+				if(arr[i]==arr[i]) {
+					i--;
+					break;
+				}
+			}
+		}
+		
+		for (int i=0; i<arr.length; i++) {
+			System.out.println(arr[i]+" ");
+		}
 	}
 
 	public void practice11() {
-
+			System.out.println("정수 : ");
+			int num = sc.nextInt();
+			
+			if (!(num%2==1&&num>=3)) {
+				System.out.println("다시 입력하세요.");
+				practice11();
+				return;
+			}
+			
+			int [] arr=new int[num];
+			int mid = num/2;
+			
+			int value = 0;
+			for(int i=0; i<arr.length; i++) {
+				//mid까지는 오름차순
+				//mid 이후는 내림차순
+				
+				if(i<=mid) {
+					arr[i]= ++value;
+				}else {
+					arr[i]=--value;
+				}
+			}
 	}
-
+	
 	public void practice12() {
+			
 
 	}
 }

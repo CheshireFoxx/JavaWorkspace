@@ -9,26 +9,26 @@ public class RockPaperScissors {
 		public void rps () {
 			
 			
-			int ½Â¸® = 0;
-			int ¹«½ÂºÎ = 0;
-			int ÆĞ¹è = 0;
-			int ÀüÅõ = 0;
+			int ìŠ¹ë¦¬ = 0;
+			int ë¬´ìŠ¹ë¶€ = 0;
+			int íŒ¨ë°° = 0;
+			int ì „íˆ¬ = 0;
 			
-			System.out.print("´ç½ÅÀÇ ÀÌ¸§À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä : ");
+			System.out.print("ë‹¹ì‹ ì˜ ì´ë¦„ì„ ì…ë ¥í•´ ì£¼ì„¸ìš” : ");
 			String name = sc.next();
 			
 			while(true)
 			{
 				System.out.println();
-				System.out.print("°¡À§¹ÙÀ§º¸ : ");
-				String ÀÔ·Â = sc.next();
+				System.out.print("ê°€ìœ„ë°”ìœ„ë³´ : ");
+				String ì…ë ¥ = sc.next();
 				
-				if(!(ÀÔ·Â.equals("°¡À§")||ÀÔ·Â.equals("¹ÙÀ§")||ÀÔ·Â.equals("º¸ÀÚ±â")||ÀÔ·Â.equals("exit"))) {
-					System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				if(!(ì…ë ¥.equals("ê°€ìœ„")||ì…ë ¥.equals("ë°”ìœ„")||ì…ë ¥.equals("ë³´ìê¸°")||ì…ë ¥.equals("exit"))) {
+					System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 					continue;
 				}
 				
-				if(ÀÔ·Â.equals("exit")) {
+				if(ì…ë ¥.equals("exit")) {
 					break;
 				}
 				
@@ -36,66 +36,66 @@ public class RockPaperScissors {
 				String com = "";
 				switch(random) {
 				case 1 :
-					 com = "°¡À§";
+					 com = "ê°€ìœ„";
 					break;
 				case 2 :
-					 com = "¹ÙÀ§";
+					 com = "ë°”ìœ„";
 					break;
 				case 3 :
-					 com = "º¸ÀÚ±â";
+					 com = "ë³´ìê¸°";
 					break;
 				}
 				
 				
-				System.out.println("ÄÄÇ»ÅÍ : "+com);
-				System.out.println(name+" : "+ÀÔ·Â);
+				System.out.println("ì»´í“¨í„° : "+com);
+				System.out.println(name+" : "+ì…ë ¥);
 				
-				if(ÀÔ·Â.equals(com)) {
-					System.out.println("ºñ°å½À´Ï´Ù.");
-					¹«½ÂºÎ++;
-					ÀüÅõ++;
+				if(ì…ë ¥.equals(com)) {
+					System.out.println("ë¹„ê²¼ìŠµë‹ˆë‹¤.");
+					ë¬´ìŠ¹ë¶€++;
+					ì „íˆ¬++;
 					continue;
 					}
-				if(ÀÔ·Â.equals("°¡À§")) {
-					if(com.equals("¹ÙÀ§")) {
-						System.out.println("Á³½À´Ï´Ù.");
-						ÆĞ¹è++;
-						ÀüÅõ++;
+				if(ì…ë ¥.equals("ê°€ìœ„")) {
+					if(com.equals("ë°”ìœ„")) {
+						System.out.println("ì¡ŒìŠµë‹ˆë‹¤.");
+						íŒ¨ë°°++;
+						ì „íˆ¬++;
 						continue;
 					}else {
-						System.out.println("ÀÌ°å½À´Ï´Ù.");
-						½Â¸®++;
-						ÀüÅõ++;
+						System.out.println("ì´ê²¼ìŠµë‹ˆë‹¤.");
+						ìŠ¹ë¦¬++;
+						ì „íˆ¬++;
 						continue;
 						
 					}
 				}
 				
-				if(ÀÔ·Â.equals("º¸ÀÚ±â")) {
-					if(com.equals("°¡À§")) {
-						System.out.println("Á³½À´Ï´Ù.");
-						ÆĞ¹è++;
-						ÀüÅõ++;
+				if(ì…ë ¥.equals("ë³´ìê¸°")) {
+					if(com.equals("ê°€ìœ„")) {
+						System.out.println("ì¡ŒìŠµë‹ˆë‹¤.");
+						íŒ¨ë°°++;
+						ì „íˆ¬++;
 						continue;
 					}else {
-						System.out.println("ÀÌ°å½À´Ï´Ù.");
-						½Â¸®++;
-						ÀüÅõ++;
+						System.out.println("ì´ê²¼ìŠµë‹ˆë‹¤.");
+						ìŠ¹ë¦¬++;
+						ì „íˆ¬++;
 						continue;
 						
 					}
 				}
 				
-				if(ÀÔ·Â.equals("¹ÙÀ§")) {
-					if(com.equals("º¸ÀÚ±â")) {
-						System.out.println("Á³½À´Ï´Ù.");
-						ÆĞ¹è++;
-						ÀüÅõ++;
+				if(ì…ë ¥.equals("ë°”ìœ„")) {
+					if(com.equals("ë³´ìê¸°")) {
+						System.out.println("ì¡ŒìŠµë‹ˆë‹¤.");
+						íŒ¨ë°°++;
+						ì „íˆ¬++;
 						continue;
 					}else {
-						System.out.println("ÀÌ°å½À´Ï´Ù.");
-						½Â¸®++;
-						ÀüÅõ++;
+						System.out.println("ì´ê²¼ìŠµë‹ˆë‹¤.");
+						ìŠ¹ë¦¬++;
+						ì „íˆ¬++;
 						continue;
 				
 					}
@@ -103,7 +103,7 @@ public class RockPaperScissors {
 				
 				
 				}
-			System.out.println(ÀüÅõ+"Àü "+½Â¸®+"½Â "+¹«½ÂºÎ+"¹« "+ÆĞ¹è+"ÆĞ");
+			System.out.println(ì „íˆ¬+"ì „ "+ìŠ¹ë¦¬+"ìŠ¹ "+ë¬´ìŠ¹ë¶€+"ë¬´ "+íŒ¨ë°°+"íŒ¨");
 			
 		}
 }
