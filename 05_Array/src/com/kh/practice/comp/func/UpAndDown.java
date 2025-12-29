@@ -20,19 +20,19 @@ public class UpAndDown {
 				System.out.println("1~100 사이의 숫자를 입력해주세요.");
 				continue;
 			}
-			if(num>0&&num<=100&&num<random) {
+			if(num<random) {
 				System.out.println("UP !");
 				count++;
 				continue;
 			}
 			
-			if(num>0&&num<=100&&num>random) {
+			if(num>random) {
 				System.out.println("DOWN !");
 				count++;
 				continue;
 			}
 			
-			if(num>0&&num<=100&&num == random) {
+			if(num == random) {
 				System.out.println("정답입니다 !!");
 				count++;
 				break;

@@ -222,19 +222,56 @@ public class ArrayPractice {
 			
 			int value = 0;
 			for(int i=0; i<arr.length; i++) {
+					
 				//mid까지는 오름차순
-				//mid 이후는 내림차순
-				
 				if(i<=mid) {
 					arr[i]= ++value;
-				}else {
+				}
+				//mid 이후는 내림차순
+				else {
 					arr[i]=--value;
 				}
 			}
 	}
 	
+	
 	public void practice12() {
+		
+			System.out.print("배열의 크기를 입력하세요 : ");
+			int num = sc.nextInt();
+			String [] arr = new String [num]; //[null, null, null]
 			
-
+			sc.nextLine();//개행문자 제거
+			
+			for(int i=0; i<arr.length; i++) {
+				System.out.print(i+1+"번째 문자열 : ");
+				arr[i] = sc.nextLine(); //띄어쓰기 포함이면 line.
+				
+			}
+			
+			while(true){
+				
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.nextLine().charAt(0);
+			
+			if(ch=='Y'||ch=='y') {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int num2 = sc.nextInt();
+				
+				String[] copy = Arrays.copyOf(arr, arr.length+num2);
+				
+				sc.nextLine();
+				for(int i = arr.length; i<copy.length; i++) {
+					System.out.print(i+1+"번째 문자열 : ");
+					copy[i] = sc.nextLine();
+				}
+				
+				arr= copy;
+				
+			}else {
+				System.out.println(Arrays.toString(arr));
+				break;
+			}
+		}
 	}
 }
