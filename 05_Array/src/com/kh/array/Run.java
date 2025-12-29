@@ -14,7 +14,7 @@ public class Run {
 		
 		C_DimensionalArray cda= new C_DimensionalArray();
 		//cda.method1();
-		cda.method2();
+		//cda.method2();
 		//cda.method3();
 		//cda.method4();
 		//cda.method5();
