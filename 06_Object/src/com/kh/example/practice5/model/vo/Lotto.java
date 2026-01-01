@@ -7,12 +7,15 @@ public class Lotto {
 		for(int i =0; i<lotto.length; i++) {
 			int random = (int)(Math.random() * 45 + 1);
 			lotto[i] = random;
+			
 			for(int j = 0; j<i; j++) {
 				// 중복
 				if(lotto[j] == lotto[i]) {
 					i--;
 					break;
 				}
+				// 0 1 2 3 4 5
+				// 0 0 0
 			}
 		}
 	}
