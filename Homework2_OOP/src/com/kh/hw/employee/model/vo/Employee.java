@@ -102,7 +102,7 @@ public class Employee {
 		
 		
 		public String printEmployee() {
-			return "";
+			return name+" "+gender+" "+phone+" "+ dept+" "+ salary+" "+bonus;
 		}
 		
 		
