@@ -70,8 +70,12 @@ public class Member {
 			this.age = age;
 		}
 		
-		public String inform() {
-			return"";
+		
+		
+		@Override
+		public String toString() {
+			return "Member [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", gender="
+					+ gender + ", age=" + age + "]";
 		}
 		
 		

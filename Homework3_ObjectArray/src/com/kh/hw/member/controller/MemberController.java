@@ -6,7 +6,7 @@ public class MemberController {
 		private Member [] m = new Member[SIZE];
 		public static final int SIZE = 10; 
 		
-		public int existMexistMemberNum() {
+		public int existMemberNum() {
 			return 0;
 		}
 		
@@ -14,8 +14,9 @@ public class MemberController {
 			return true;
 		}
 		
-		public void insertMember(String id, String name, String password, String email, String gender, int age) {
-			
+		public void insertMember(String id, String name, String password, String email, char gender, int age) {
+				m[0] = new Member(id, name, password, email, gender, age);
+			 
 		}
 		
 		public String searchId(String id) {
@@ -23,7 +24,7 @@ public class MemberController {
 		}
 		
 		public Member[] searchName(String name) {
-			return [];
+			
 		}
 		
 		public Member[] searchEmail(String email) {
@@ -39,15 +40,15 @@ public class MemberController {
 		}
 		
 		public Boolean delete(String id) {
-			return true;
+			
 		}
 		
 		public void delete() {
 			
 		}
 		
-		public Member printAll() {
-			return;
+		public Member[] printAll() {
+			
 		}
 		
 		
