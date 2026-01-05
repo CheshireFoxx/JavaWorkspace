@@ -10,20 +10,23 @@ public class PersonController {
 		public int[] personCount() {
 			int m = 0;
 			int n = 0;
-			int [] pc = new int[2];
-			pc[0]=m;
-			pc[1]=n;
+			int [] pCount = new int[2];
+			
 			
 			for(int i=0; i<s.length;i++) {
-				if(s!=null) {
+				if(s[i]!=null) {
 				m++;
+				pCount[0]=m;
 				}
+			
+			}
+			
 			for(int j =0; j<e.length;j++) {
-				if(e!=null) {
+				if(e[j]!=null) {
 				n++;
+				pCount[1]=n;
 			}
-			}
-			}return pc ;
+			}return pCount ;
 			
 			
 			}
@@ -41,13 +44,12 @@ public class PersonController {
 			
 			
 			}
-		}
 		
 		public Student[] printStudent(){
 			return s;
 		}
 		
-		public void insertEmpoyee(String name, int age, double height, double weight, int salary, String dept) {
+		public void insertEmployee(String name, int age, double height, double weight, int salary, String dept) {
 			Employee emp= new Employee(name, age, height, weight, salary, dept);
 
 			for(int j=0;j<e.length;j++) {
