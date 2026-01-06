@@ -1,4 +1,4 @@
-package com.kh.chap02_abstract.part02.model.vo;
+package com.kh.chap2_abstract.part02.model.vo;
 
 // 인터페이스 상속 (implements)
 //  - 클래스와 클래스의 상속 관계(단일상속) : 클래스명 extends 부모클래스

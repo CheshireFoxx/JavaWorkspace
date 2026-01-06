@@ -1,4 +1,4 @@
-package com.kh.chap02_abstract.part02.model.vo;
+package com.kh.chap2_abstract.part02.model.vo;
 
 public abstract class Person {
 	
