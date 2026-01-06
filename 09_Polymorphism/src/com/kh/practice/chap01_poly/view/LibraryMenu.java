@@ -19,7 +19,7 @@ public class LibraryMenu {
 			System.out.print("성별 : ");
 			char gender = sc.next().charAt(0);
 			
-			Member mem = new Member(name, age, gender);
+			Member mem = Member(name, age, gender);
 			Lc.insertMember(mem);
 			
 			while(true) {
