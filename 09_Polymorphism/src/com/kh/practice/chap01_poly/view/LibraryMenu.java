@@ -7,8 +7,8 @@ import com.kh.practice.chap01_poly.model.vo.Book;
 import com.kh.practice.chap01_poly.model.vo.Member;
 
 public class LibraryMenu {
-		private LibraryController Lc;
-		private Scanner sc;
+		private LibraryController lc= new LibraryController();
+		private Scanner sc= new Scanner(System.in);
 		
 		
 		public void mainMenu() {
@@ -19,8 +19,8 @@ public class LibraryMenu {
 			System.out.print("성별 : ");
 			char gender = sc.next().charAt(0);
 			
-			Member mem = Member(name, age, gender);
-			Lc.insertMember(mem);
+			Member mem = new Member(name, age, gender);
+			lc.insertMember(mem);
 			
 			while(true) {
 				
@@ -30,21 +30,21 @@ public class LibraryMenu {
 				System.out.println("3. 도서 검색");
 				System.out.println("4. 도서 대여하기");
 				System.out.println("9. 프로그램 종료하기");
-				System.out.println("메뉴 번호 : ");
+				System.out.print("메뉴 번호 : ");
 				int mNum=sc.nextInt();
 				
 				switch(mNum) {
 				case 1:
-					Lc.myinfo();
+					System.out.println(lc.myinfo());
 					break;
 				case 2:
-					Lc.selectAll();
+					selectAll();
 					break;
 				case 3:
-					Lc.searchBook();
+					searchBook();
 					break;
 				case 4:
-					Lc.rentBook();
+					rentBook();
 					break;
 				case 9 :
 					System.out.println("프로그램을 종료합니다.");
@@ -60,10 +60,12 @@ public class LibraryMenu {
 		
 		public void selectAll() {
 
-			Book[] bList = Lc.selectAll();
+			Book[] bList = lc.selectAll();
 
 			for(int i =0; i<bList.length;i++) {
+				if (bList[i] != null) {
 				System.out.println(i+"번 도서 : "+bList[i]);
+				}
 			}
 		}
 		
@@ -71,11 +73,13 @@ public class LibraryMenu {
 			System.out.print("검색할 제목 키워드 : ");
 			String keyword = sc.next();
 			
+			Book [] searchList = lc.searchBook(keyword);
 			
-			Lc.searchBook(keyword);
-			
-			Book [] searchList = Lc.searchBook(keyword);
-			System.out.println(searchList);
+			for (int i = 0; i < searchList.length; i++) {
+		        if (searchList[i] != null) {
+		            System.out.println(i + "번 도서 : " + searchList[i]);
+		        }
+			}
 		}
 		
 		public void rentBook() {
@@ -83,8 +87,7 @@ public class LibraryMenu {
 			System.out.print("대여할 도서 선택 : ");
 			int index = sc.nextInt();
 			
-			Lc.rentBook(index);
-			int result = Lc.rentBook(index);
+			int result = lc.rentBook(index);
 			
 			if(result ==0) {
 				System.out.println("성공적으로 대여되었습니다.");

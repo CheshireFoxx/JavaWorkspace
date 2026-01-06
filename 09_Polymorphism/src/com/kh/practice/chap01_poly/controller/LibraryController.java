@@ -1,11 +1,10 @@
 package com.kh.practice.chap01_poly.controller;
 
 import com.kh.practice.chap01_poly.model.vo.*;
-i
 
 public class LibraryController {
-	private Member mem;
-	private Book[] bList;
+	private Member mem = null;
+	private Book[] bList= new Book[5];
 	
 	{
 		bList[0] = new CookBook("백종원의 집밥", "백종원", "tvN", true);
@@ -16,7 +15,7 @@ public class LibraryController {
 	}
 	
 	public void insertMember(Member mem) {
-		
+		this.mem = mem;
 	}
 	
 	public Member myinfo() {
@@ -28,10 +27,68 @@ public class LibraryController {
 	}
 	
 	public Book[] searchBook(String keyword) {
-		return;
+		
+			Book[] b = new Book[5];
+			
+			int count = 0;
+
+		    for (int i = 0; i < bList.length; i++) {
+		        if (bList[i] != null) {
+		            if (bList[i].getTitle().contains(keyword)) {
+		                b[count] = bList[i];
+		                count++;
+	
+		                if (count == b.length) {
+		                    break;
+		                }
+		            }
+		        }
+		    }
+
+		    return b;
 	}
 	
 	public int rentBook(int index) {
-		return 0;
+		int result=0;
+		
+		if(bList[index] instanceof AniBook) {
+			 AniBook ab=(AniBook)bList[index];
+			if(ab.getAccessAge() > mem.getAge()) {
+				result=1;
+				return result;
+			}
+		}
+		
+		if (bList[index] instanceof CookBook) {
+	        CookBook cb = (CookBook) bList[index];
+
+	        if (cb.isCoupon()) {
+	            mem.setCouponCount(mem.getCouponCount() + 1);
+	            result = 2;
+	            return result;
+	        }
+	    }
+		return result;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
