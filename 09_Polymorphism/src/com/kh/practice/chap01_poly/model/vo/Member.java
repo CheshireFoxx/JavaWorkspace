@@ -4,7 +4,7 @@ public class Member {
 		private String name;
 		private int age;
 		private char gender;
-		private int couponCount;
+		private int couponCount=0;
 		
 		public Member() {
 			

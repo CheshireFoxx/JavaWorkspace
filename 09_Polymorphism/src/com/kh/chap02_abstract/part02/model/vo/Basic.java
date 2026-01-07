@@ -3,7 +3,7 @@ package com.kh.chap02_abstract.part02.model.vo;
 public interface Basic {
 	/*
 	 * 인터페이스
-	 *  - 내부적으로 "상수 필드"와 "추상메서드"만 사용 가능한, 추상클래스의 변형체(jdk-7)
+	 *  - 내부적으로 "상수 필드"와 "추상메서드"만 사용 가능한, 추상클래스의 변형체(JDK-7)
 	 *  - 인터페이스에서 필드를 정의하면 무조건 상수필드로 정의되며, 메서드를 정의하면
 	 *    무조건 추상메서드로 정의 된다.
 	 *  - 특정클래스에서 무조건 구현해야하는 기능이 존재하는 경우, 인터페이스를 만들어서 상속(구현)시킨다.
@@ -39,7 +39,7 @@ public interface Basic {
 	// 기본메서드는 항상 추상메서드로 간주하기 때문에 public abstract는 생략 가능
 	/* public abstract */ void eat();
 	
-	// jdk-8버전 이후 사용가능한 기능
+	// JDK-8버전 이후 사용가능한 기능
 	// 1. default 메서드
 	default void breathing() {
 		System.out.println("숨쉬기");

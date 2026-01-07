@@ -25,7 +25,7 @@ public class MathRun {
 		
 		// 절대값 처리 메서드
 		// 절대값 => 음수도 양수, 양수는 양수로 만드는 메서드
-		// Math.abs(int/double/long/flout):int/double/long/flout
+		// Math.abs(int/double/long/float):int/double/long/float
 		int num2 = -10;
 		System.out.println("절대값 : "+ Math.abs(num2));
 		

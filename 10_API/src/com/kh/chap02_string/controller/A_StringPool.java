@@ -24,8 +24,8 @@ public class A_StringPool {
 				
 				System.out.println(str1.hashCode()); // 주소값 변환 메서드
 				System.out.println(str2.hashCode());
-				// 기본 hashcode()는 16진수 메모리 주소값을 10진수로 변환하는 메서드
-				// String의 hashcode()메서드의 경우 주소값이 아닌 담긴 문자열을 10진수로
+				// 기본 hashCode()는 16진수 메모리 주소값을 10진수로 변환하는 메서드
+				// String의 hashCode()메서드의 경우 주소값이 아닌 담긴 문자열을 10진수로
 				// 변환해주는 메서드로 오버라이딩 되어 있다.
 				
 				// 실제 참조변수의 주소값을 확인하는 메서드
@@ -99,38 +99,9 @@ public class A_StringPool {
 				
 				str+="abc";
 				System.out.println(System.identityHashCode(str));
-				
-				
-				
-				
-				
-				
-				
-				
+	
 			}
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+		
 }
 

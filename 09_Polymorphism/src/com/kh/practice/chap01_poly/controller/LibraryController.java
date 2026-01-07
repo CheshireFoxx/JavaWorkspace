@@ -30,21 +30,17 @@ public class LibraryController {
 		
 			Book[] b = new Book[5];
 			
-			int count = 0;
+			int index = 0;
 
 		    for (int i = 0; i < bList.length; i++) {
 		        if (bList[i] != null) {
 		            if (bList[i].getTitle().contains(keyword)) {
-		                b[count] = bList[i];
-		                count++;
-	
-		                if (count == b.length) {
-		                    break;
+		                b[index] = bList[i];
+		                index++;
+
 		                }
 		            }
 		        }
-		    }
-
 		    return b;
 	}
 	
@@ -52,20 +48,17 @@ public class LibraryController {
 		int result=0;
 		
 		if(bList[index] instanceof AniBook) {
-			 AniBook ab=(AniBook)bList[index];
-			if(ab.getAccessAge() > mem.getAge()) {
+
+			if(mem.getAge()<((AniBook)bList[index]).getAccessAge()) {
 				result=1;
-				return result;
 			}
 		}
 		
 		if (bList[index] instanceof CookBook) {
-	        CookBook cb = (CookBook) bList[index];
 
-	        if (cb.isCoupon()) {
+	        if (((CookBook) bList[index]).isCoupon()) {
 	            mem.setCouponCount(mem.getCouponCount() + 1);
 	            result = 2;
-	            return result;
 	        }
 	    }
 		return result;
