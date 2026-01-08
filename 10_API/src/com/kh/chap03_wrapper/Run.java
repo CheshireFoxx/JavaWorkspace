@@ -41,7 +41,7 @@ public class Run {
 			
 			
 			System.out.println("======================");
-			// String 형태로 이루어진 기본 자료형을 기본 자료형으로 변환하는 방법
+			// String 형태로 이루어진 자료형을 기본 자료형으로 변환하는 방법
 			String str1 = "10";
 			String str2 = "15.3";
 			

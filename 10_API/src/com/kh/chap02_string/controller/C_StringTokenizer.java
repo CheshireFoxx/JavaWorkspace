@@ -23,7 +23,7 @@ public class C_StringTokenizer {
 //			System.out.println(stn.nextToken());
 //			System.out.println(stn.nextToken());
 //			System.out.println(stn.nextToken());
-			//System.out.println(stn.nextToken());
+//			System.out.println(stn.nextToken());
 			
 			// NoSuchElementException
 			// 현재 남아있는 토큰의 갯수범위를 벗어나면 에러 발생
