@@ -8,7 +8,7 @@ import com.kh.practice.list.library.model.vo.Book;
 import com.kh.practice.list.model.compare.AscTitle;
 
 public class BookController {
-				private List<Book> list = new ArrayList();
+				private List list = new ArrayList();
 
 				public BookController() {
 					list.add(new Book("자바의 정석", "남궁 성", "기타", 20000));
@@ -22,7 +22,7 @@ public class BookController {
 				}
 				
 				public ArrayList<Book> selectList() {
-					ArrayList<Book> result = (ArrayList<Book>)list;
+					ArrayList result = (ArrayList)list;
 					return result ;
 				}
 				
@@ -40,7 +40,7 @@ public class BookController {
 				public Book deleteBook(String title, String author) {
 							Book removeBook = null;
 								for(int i=0;i<list.size();i++) {
-								Book b = list.get(i);
+								Book b = (Book) list.get(i);
 								if(b.getTitle().equals(title)&&b.getAuthor().equals(author)) {
 									removeBook=b;
 						}
@@ -49,7 +49,7 @@ public class BookController {
 				
 				
 				public int ascBook() {
-					
+					Collections.sort(list);
 					
 					
 					return 1;
