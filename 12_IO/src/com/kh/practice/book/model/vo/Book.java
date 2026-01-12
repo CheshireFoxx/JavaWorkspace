@@ -1,6 +1,8 @@
 package com.kh.practice.book.model.vo;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Book {
 			private String title;
@@ -64,8 +66,12 @@ public class Book {
 
 			@Override
 			public String toString() {
-				return title + ", " + author + ", " + price + ", " + date
-						+ ", " + discount;
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+				String formatSDate = sdf.format(new Date(date.getTimeInMillis()));
+				
+				
+				return title + "\t " + author + "\t " + price + "\t " + date
+						+ "\t " + discount;
 			}
 			
 			
