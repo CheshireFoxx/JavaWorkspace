@@ -1,120 +1,117 @@
 package com.kh.practice.list.library.model.vo;
 
-import java.util.Comparator;
+import java.util.Objects;
 
-public class Book implements Comparator{
-				private String title;
-				private String author;
-				private String category;
-				private int price;
-				
-				public Book() {
-					super();
-				}
+public class Book  implements Comparable{
+	private String title;
+	private String author;
+	private String category;
+	private int price;
 
-				public Book(String title, String author, String category, int price) {
-					super();
-					this.title = title;
-					this.author = author;
-					this.category = category;
-					this.price = price;
-				}
+	public Book() {
 
-				public String getTitle() {
-					return title;
-				}
+	}
 
-				public void setTitle(String title) {
-					this.title = title;
-				}
+	public Book(String title, String author, String category, int price) {
+		super();
+		this.title = title;
+		this.author = author;
+		this.category = category;
+		this.price = price;
+	}
 
-				public String getAuthor() {
-					return author;
-				}
+	public String getTitle() {
+		return title;
+	}
 
-				public void setAuthor(String author) {
-					this.author = author;
-				}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-				public String getCategory() {
-					return category;
-				}
+	public String getAuthor() {
+		return author;
+	}
 
-				public void setCategory(String category) {
-					this.category = category;
-				}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
-				public int getPrice() {
-					return price;
-				}
+	public String getCategory() {
+		return category;
+	}
 
-				public void setPrice(int price) {
-					this.price = price;
-				}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
-				@Override
-				public String toString() {
-					return title + ", " + author + ", " + category + ", " + price;
-				}
-				
-				@Override
-				public int hashCode() {
-					return (title+author+category+price).hashCode();
-					
-				}
-				
-				@Override
-				public boolean equals(Object o) {
-					if(!(o instanceof  Book)) {
-						return false;
-					}
-					
-					boolean result = false;
-					
-					Book b = (Book) o;
-					
-					
-					// 이름, 나이, 점수가 모두 같다면..
-					if(this.title.equals(b.title)&&this.author.equals(b.author)&&this.category.equals(b.category)&&this.price==b.price) {
-						result = true;
-					}return result;
-					
-				}
-				
+	public int getPrice() {
+		return price;
+	}
 
-				
-				public int compareTo(Object o1, Object o2) {
-					Book b1 = (Book) o1;
-					Book b2 = (Book) o2;
-					int result = b1.getTitle().compareTo(b2.getTitle());
-					
-					return result;
-				}
+	public void setPrice(int price) {
+		this.price = price;
+	}
 
-				@Override
-				public int compare(Object o1, Object o2) {
-					// TODO Auto-generated method stub
-					return 0;
-				}
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", category=" + category + ", price=" + price + "]";
+	}
+
+//	@Override
+//	public int hashCode() {
+//		// 전통적인 hashCode 생성방식
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result + price;
+//		result = prime * result + (title == null? 0 : title.hashCode() );
+//		result = prime * result + (author == null ? 0 : author.hashCode());
+//		result = prime * result + (category == null ? 0 : category.hashCode());
+//		
+//		return result;
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		
+//		if(!(obj instanceof Book)) {
+//			return false;
+//		}
+//		Book b = (Book) obj;
+//		
+//		if(this.title.equals(b.title) 
+//				&& this.author.equals(b.author)
+//				&& this.category.equals(b.category) 
+//				&& this.price == b.price) {
+//			return true;
+//		}
+//		return false;
+//	}
+	
+	@Override
+	public int compareTo(Object o) {
+		return this.title.compareTo( ((Book)o).title );
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(author, category, price, title);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(author, other.author) && Objects.equals(category, other.category) && price == other.price
+				&& Objects.equals(title, other.title);
+	}
+
 }
+
+
+
+

@@ -77,6 +77,7 @@ public class ListRun {
 		list.add(new Music("Tears","소찬휘"));
 		list.add(new Music("와","이정현"));
 		list.add(new Music("멍","김현정"));
+		//list.add("zzzz");
 		System.out.println(list);
 		
 		// 2.add(int index, E e) 
@@ -164,67 +165,48 @@ public class ListRun {
 		System.out.println("리스트가 비어있습니까 ? : "+ list.isEmpty());
 		System.out.println(list);
 		
-		System.out.println("===========================================");
-		// 13. Cillectins.sort(List List) : 배열을 정렬해주는 메서드
-		List<String> list3 = new ArrayList();
-		
+		System.out.println("====================================");
+		// 13. Collections.sort(List list) : 배열을 정렬해주는 메서드
+		List<String> list3 = new ArrayList<>();
 		list3.add("라경민");
 		list3.add("가경민");
-		list3.add("나경민");
 		list3.add("다경민");
+		list3.add("나경민");
 		
-		
-		// 정렬 메서드 호출
-		 // 가나다라, 1234 오름차순 정렬
-		Collections.sort(list3);
+		// 정렬메서드 호출
+		Collections.sort(list3); // 가나다라, 1234 오름차순정렬
 		System.out.println(list3);
-		
 		
 		// 역순으로 정렬
+		Comparator<String> comp=  Collections.reverseOrder();
+		Collections.sort(list3, comp);
 		
-		Comparator<String> comp = Collections.reverseOrder();
-		Collections.sort(list3,comp);
 		System.out.println(list3);
 		
-		
-		/* 
-		 * 내가 만든 클래스(VO)를 정렬하기 위한 방법
-		 * 1. comparable 인터페이스 상속
-		 * 	- VO 클래스에 직접 상속시켜서 사용
-		 * 	- 해당 VO클래스의 기본 정렬 조건으로 사용된다.
+		/*
+		 * 내가만든 클래스(vo)를 정렬하기 위한 방법
+		 * 1. comparable 인터페이스 상속 
+		 *  - VO클래스에 직접 상속시켜서 사용
+		 *  - 해당 VO클래스의 "기본정렬조건"으로 사용된다.
 		 * 
-		 * 2. comparator 인터페이스 상속
-		 * 	- 기본 정렬 조건 외에 추가 정렬 조건을 만들고자 할 때 사용
-		 * 	- VO클래스 외의 별도 클래스에 Comparator를 상속시켜서 구현한다.
-		 * 	- 여러개의 정렬조건을 만들 수 있다.
-		 * 
-		 */
-		
-		System.out.println("===========================================");
-		Collections.sort(list);
+		 * 2. comparator 인터페이스 상속 
+		 *  - 기본정렬조건 외에 추가 정렬조건을 만들고자 할 때 사용
+		 *  - vo클래스 이외 별도 클래스에 Comparator를 상속시켜서 구현한다.
+		 *  - 여러개의 정렬조건을 만들 수 있다.
+		 *  */
+		System.out.println("====================================");
+		Collections.sort(list); // 
 		System.out.println(list);
 		
-		
-		Comparator <Music> comp2 = new MusicArtistDescending();
-		Collections.sort(list,comp2);
+		Comparator<Music> comp2 = new MusicArtistDescending();
+		Collections.sort(list, comp2);
 		System.out.println(list);
 		
-		
-		//  14.	Collections.shuffle()
-		//	 - 내부 데이터를 섞는 메서드
+		// 14 . Collections.shuffle()
+		//  - 내부 데이터를 섞는 메서드
 		Collections.shuffle(list3);
 		System.out.println(list3);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}	
-	
+	}
 }
 
 

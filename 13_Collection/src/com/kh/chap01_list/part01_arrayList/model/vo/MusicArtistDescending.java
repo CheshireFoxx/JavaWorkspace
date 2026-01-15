@@ -11,12 +11,14 @@ public class MusicArtistDescending implements Comparator<Music>{
 		
 		// 2. 내림차순
 		// o2 비교메서드 o1
-		
-		
-		
-		return o2.getSinger().compareTo(o1.getTitle());
+		return o2.getArtist().compareTo(o1.getArtist());
 	}
 
-
-			
 }
+
+
+
+
+
+
+
