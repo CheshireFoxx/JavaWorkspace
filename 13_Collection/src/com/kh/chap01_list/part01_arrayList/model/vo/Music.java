@@ -63,11 +63,6 @@ public class Music implements Comparable<Music> {
 		
 		return this.title.compareTo(o.title);
 	}
-
-	public Music getSinger() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }
 
