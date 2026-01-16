@@ -20,6 +20,40 @@ public class OuterClass3 {
 	 *   final 키워드만 붙은 변수도 constant pool에 저장공간이 임시로 할당된다.
 	 * */
 	
+	
+	private String str = "일반 필드";
+	private static String staticStr = "정적 필드";
+	
+	public Runnable getRunnable(int num2) {
+				int local = 1; // 지역변수
+				//local = 5;
+				
+				// 지역변수는 지역내부 클래스에서 사용되는 경우, final 예약어가 붙은 것처럼 취급한다.
+				// why? stack 메모리에서 지역변수의 저장공간이 소멸된 후, 참조를 유지하기 위해서.
+				
+				class LocalInnerClass implements Runnable{
+					private int num = 10;
+
+					@Override
+					public void run() {
+						// 지역변수는 메서드 종료 시 stack 공간에서 함께 소멸된다.
+						System.out.println(local);
+						System.out.println(num2);
+						
+						System.out.println(num);
+						
+						System.out.println(str);
+						System.out.println(staticStr);
+						
+					}
+					
+					
+				}
+				
+				return new LocalInnerClass();
+				
+				
+	}
 
 }
 
