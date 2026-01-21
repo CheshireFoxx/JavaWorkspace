@@ -8,7 +8,7 @@ import com.kh.chap01_innerClass.part03_local.OuterClass3;
 public class Run {
 	public static void main(String[] args) {
 		OuterClass oc = new OuterClass();
-		//oc.method();
+		oc.method();
 		//InnerClass ic = oc.new InnerClass();
 		
 		// 빌더클래스를 활용한 객체 생성
@@ -31,6 +31,10 @@ public class Run {
 		r.run();
 	}
 }
+
+
+
+
 
 
 
